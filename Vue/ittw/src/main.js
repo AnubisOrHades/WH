@@ -13,3 +13,16 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+// 设置动态标题
+router.beforeEach((to, from, next) => {
+  if (to.meta.content) {
+    let head = document.getElementsByTagName('head')
+    let meta = document.createElement('meta')
+    meta.content = to.meta.content
+    head[0].appendChild(meta)
+  }
+  if (to.meta.title) {
+    document.title = to.meta.title
+  }
+  next()
+})
