@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" content="30">
+    <title>控件集合</title>
+    <!--标签图标-->
+    <link rel="shortcut icon" href="static/image/moon.png"/>
+    <style type="text/css">
+        .fl {
+            float: left;
+        }
+
+        #info {
+            width: 300px;
+            background: cornflowerblue;
+            line-height: 30px;
+        }
+
+        #dt {
+            width: 400px;
+            background: bisque;
+        }
+
+        #bb {
+            width: 300px;
+            background: chartreuse;
+        }
+
+        .clearer {
+            clear: left;
+        }
+        #select{
+            width: 200px;
+            background: #43f7fa;
+        }
+    </style>
+</head>
+<body>
+<div id="head">
+    <h1>标签控件</h1>
+</div>
+
+<div id="content">
+    <form action="static" method="post">
+        <ul id="info" class="fl">
+            <li>
+                <!--placeholder提示文本-->
+                <label for="name">姓名</label>
+                <input id="name" type="text" name="name" placeholder="姓名">
+            </li>
+            <li>
+                <label for="password">密码</label>
+                <input id="password" type="password" placeholder="密码">
+            </li>
+            <li>
+                <label for="tel">电话</label>
+                <input id="tel" type="tel" placeholder="电话">
+            </li>
+            <li>
+                <label for="email">邮箱</label>
+                <input id="email" type="email" placeholder="邮箱">
+            </li>
+            <li>
+                <label for="url">主页</label>
+                <input id="url" type="url" placeholder="个人主页">
+            </li>
+            <li>
+                <label for="age">年龄</label>
+                <input id="age" type="number" placeholder="年龄">
+            </li>
+            <li>
+                <input type="image" src="static/image/moon.png" width="30px" alt="头像">
+            </li>
+            <li>
+                <!--复选框 checked="checked"默认选中-->
+                <!--label 属性 for指向input id-->
+                <label for="bilk">自行车</label>
+                <input id="bilk" type="checkbox" name="hobby" value="Bike">
+                <label for="car">小汽车</label>
+                <input id="car" type="checkbox" name="hobby" value="Car" checked="checked">
+                <label for="book">看书</label>
+                <input id="book" type="checkbox" name="hobby" value="book">
+                <label for="music">听音乐</label>
+                <input id="music" type="checkbox" name="hobby" value="music">
+
+            </li>
+            <li>
+                <!--单选框必须有相同的name属性-->
+                <label for="male">男</label>
+                <input type="radio" name="sex" id="male" value="male">
+                <label for="female">女</label>
+                <input type="radio" name="sex" id="female" value="female">
+            </li>
+            <li>
+                <input type="submit"> <input type="reset">
+            </li>
+        </ul>
+    </form>
+    <dl id="dt" class="fl">
+        <dt>
+            <h4>时间</h4>
+        </dt>
+        <dd>
+            <label for="date">日期</label>
+            <input id="date" type="date">
+        </dd>
+        <dd>
+            <label for="datetime">时间和日期</label>
+            <input id="datetime" type="datetime-local">
+        </dd>
+        <dd>
+            <label for="month">月份</label>
+            <input id="month" type="month">
+        </dd>
+        <dd>
+
+            <label for="week">周</label>
+            <input id="week" type="week">
+        </dd>
+        <dd>
+            <label for="time">时间</label>
+            <input id="time" type="time">
+        </dd>
+    </dl>
+    <ol id="bb" class="fl">
+        <li>
+            <label for="color">选择您喜爱的颜色：</label>
+            <input id="color" type="color">
+        </li>
+        <li>
+            <p id="demo"></p>
+        </li>
+        <li>
+            <input type="button" value="显示颜色值" onclick="color()">
+        </li>
+        <li>
+            <label for="file">文件选择</label>
+            <input id="file" type="file">
+        </li>
+        <li>
+            <p id="fileDemo"></p>
+        </li>
+        <li>
+            <input type="button" value="显示文件路径" onclick="file()">
+        </li>
+        <li>
+            <input id="range" type="range">
+        </li>
+        <li>
+            <p id="rangeDemo"></p>
+        </li>
+        <li>
+            <button onclick="range()">滑块</button>
+        </li>
+    </ol>
+    <ul id="select" class="fl">
+        <li>
+            <select>
+                <option>北京</option>
+                <option>上海</option>
+                <option>深圳</option>
+                <option>香港</option>
+                <option>西藏</option>
+            </select>
+        </li>
+        <li>
+            <textarea placeholder="简介"></textarea>
+        </li>
+    </ul>
+</div>
+<div id="foot" class="clearer">
+    <!--搜索控件-->
+    <input type="search">
+
+    <!--Hidden 对象代表一个 HTML 表单中的某个隐藏输入域。-->
+    <!--这种类型的输入元素实际上是隐藏的。这个不可见的表单元素的 value 属性保存了一个要提交给 Web 服务器的任意字符串。如果想要提交并非用户直接输入的数据的话，就是用这种类型的元素。-->
+    <!--在 HTML 表单中 <input type="hidden"> 标签每出现一次，一个 Hidden 对象就会被创建。-->
+    <input type="hidden" value="隐藏的数据">
+</div>
+<!--滑块控件-->
+
+
+<script>
+    function color() {
+        var colorValue = document.getElementById("color").value;
+        document.getElementById("demo").innerHTML = colorValue;
+    }
+
+    function file() {
+        var filePath = document.getElementById("file").value;
+        document.getElementById("fileDemo").innerHTML = filePath;
+    }
+
+    function range() {
+        var rangeValue = document.getElementById("range").value;
+        document.getElementById("rangeDemo").innerHTML = rangeValue;
+    }
+
+
+</script>
+</body>
+</html>
