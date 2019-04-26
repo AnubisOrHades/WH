@@ -40,13 +40,20 @@
           </select>
         </li>
       </ul>
+      <div class="clear"></div>
+      <deng-vue></deng-vue>
     </ul>
   </div>
 </template>
 
 <script>
+import deng from '../components/deng'
+
 export default {
   name: 'order',
+  components: {
+    dengVue: deng
+  },
   data () {
     return {
       orders: [
