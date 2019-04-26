@@ -1,9 +1,10 @@
 <template>
-    <div class="deng">
-      <p v-text="txt"></p>
-      <input type="text" v-model="txt"><br>
-      <button @click="start">开始</button>&nbsp;&nbsp;&nbsp;&nbsp;<button @click="end">停止</button>{{id}}
-    </div>
+  <div class="deng">
+    <p v-text="txt"></p>
+    <input type="text" v-model="txt"><br>
+    <button @click="start">开始</button>&nbsp;&nbsp;&nbsp;&nbsp;<button @click="end">停止</button>
+    {{id}}
+  </div>
 </template>
 
 <script>
@@ -12,12 +13,12 @@ export default {
   data () {
     return {
       txt: '我是一个跑马灯，哈哈哈！！！',
-      id : 0
+      id: 0
     }
   },
   methods: {
     start () {
-      if (this.id != 0) return
+      if (this.id !== 0) return
       this.id = setInterval(() => {
         var tou = this.txt.substring(0, 1)
         var yu = this.txt.substring(1)
@@ -34,7 +35,7 @@ export default {
 </script>
 
 <style scoped>
-  .deng{
+  .deng {
     width: 800px;
     font-size: 20px;
     line-height: 30px;

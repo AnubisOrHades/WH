@@ -7,7 +7,8 @@
       <div class="navTop">
         <ul>
           <li class="fl"><a href="#" class="home">首页</a></li>
-          <li class="fl" v-for="(n,index) in nav_lis" :key="index" @click="send"><a href="#" v-text="n" :title="n"></a></li>
+          <li class="fl" v-for="(n,index) in nav_lis" :key="index" @click="send"><a href="#" v-text="n" :title="n"></a>
+          </li>
           <!--<li class="fl"><a href="#">博雅新闻</a></li>-->
           <!--<li class="fl"><a href="#">关于我们</a></li>-->
           <!--<li class="fl"><a href="#">客服中心</a></li>-->
@@ -25,6 +26,7 @@
 
 <script>
 import connector from '../connector'
+
 export default {
   name: 'nav',
   data () {

@@ -3,7 +3,7 @@
     <!--引用过滤器-->
     <p>{{text | fanzhuan}}</p>
     <p>{{text | lis}}</p>
-    <input type="text" v-model="text" >
+    <input type="text" v-model="text">
   </div>
 </template>
 
@@ -25,10 +25,11 @@ export default {
 </script>
 
 <style scoped>
-.filter{
-  width: 800px;
-}
-  .filter p{
+  .filter {
+    width: 800px;
+  }
+
+  .filter p {
     min-width: 200px;
     height: 50px;
     font-size: 30px;
@@ -37,7 +38,8 @@ export default {
     color: blue;
     border-radius: 5px;
   }
-  .filter input{
+
+  .filter input {
     width: 200px;
     height: 30px;
     border-radius: 5px;

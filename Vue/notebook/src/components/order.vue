@@ -32,7 +32,7 @@
         </li>
         <li>
           <span v-bind:class="[s]">v-bind 绑定class改变样式</span><span v-text="s"></span>
-          <select name="background"  v-model="s" id="bg">
+          <select name="background" v-model="s" id="bg">
             <option value="green">green</option>
             <option value="red">red</option>
             <option value="yellow">yellow</option>
@@ -98,16 +98,20 @@ export default {
     background: blueviolet;
     border-bottom: black solid 1px;
   }
-  .green{
+
+  .green {
     background: green;
   }
-  .red{
+
+  .red {
     background: red;
   }
-  .yellow{
+
+  .yellow {
     background: yellow;
   }
-  .blue{
+
+  .blue {
     background: blue;
   }
 </style>

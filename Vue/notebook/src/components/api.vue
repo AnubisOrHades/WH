@@ -1,6 +1,6 @@
 <template>
-    <div id='content' v-text="json_data">
-    </div>
+  <div id='content' v-text="json_data">
+  </div>
 </template>
 
 <script>
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style scoped>
-  #content{
+  #content {
     width: 800px;
     margin: 0 auto;
     color: darkkhaki;
