@@ -1,0 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 微软雅黑;
+  font-size: 14px;
+  /*background: linear-gradient(45deg, #211136, #bf5853);*/
+}
+.w{
+  width: 1200px;
+  margin: 0 auto;
+}
+.clear{
+  clear: both;
+}
