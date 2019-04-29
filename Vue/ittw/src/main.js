@@ -11,12 +11,23 @@ Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.prototype.axios = Axios
 
+// 设置默认请求路由
+Axios.defaults.baseURL = 'http://127.0.0.1:8000/api/'
+// 设置默认请求头
+Axios.defaults.headers = {
+  Authorization: 'JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNCwidXNlcm5hbWUiOiIxNTk4ODg4ODg4OCIsImV4cCI6MTU1NzEyNjAyOCwiZW1haWwiOiIifQ.nzZlPhsaDSPjxto8-EfQCr7pAyua5ynayornfr7bbJc'
+}
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  data () {
+    return {
+      token: 'token'
+    }
+  }
 })
 // 设置动态标题
 router.beforeEach((to, from, next) => {
