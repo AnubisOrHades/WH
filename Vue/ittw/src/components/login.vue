@@ -5,14 +5,14 @@
       <div class="form">
         <div class="log_header" v-text="left_title"></div>
         <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-          <el-form-item label="手机" prop="mobile" size="100px">
-            <el-input v-model="ruleForm.mobile" autocomplete="off"></el-input>
+          <el-form-item label="手机" prop="username" size="100px">
+            <el-input v-model="ruleForm.username" autocomplete="off"></el-input>
           </el-form-item>
           <el-form-item label="验证码" prop="code" v-show="sign_seen">
             <el-input v-model="ruleForm.code" autocomplete="off"></el-input>
           </el-form-item>
-          <el-form-item label="密码" prop="pass">
-            <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+          <el-form-item label="密码" prop="password">
+            <el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
           </el-form-item>
           <el-form-item label="确认密码" prop="checkPass" v-show="sign_seen">
             <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
@@ -25,7 +25,9 @@
         </el-form>
       </div>
     </div>
-    {{json_data}}
+    <div class="clear"></div>
+    <p>{{json_data}}</p>
+    <!--<p v-for="( v , k, i ) in json_data" :key="i"> {{k}}:{{v}}</p>-->
   </div>
 </template>
 <script>
@@ -57,9 +59,9 @@ export default {
       sign_seen: false,
       json_data: 'json_data',
       ruleForm: {
-        mobile: '15988888888',
+        username: '15988888888',
         code: '',
-        pass: '111111',
+        password: '111111',
         checkPass: ''
       }
       // rules: {
@@ -75,15 +77,19 @@ export default {
   methods: {
     login (formName) {
       var that = this
-      this.axios.post('http://127.0.0.1:8000/api/login/', 'username=15988888888&password=111111', {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'})
+      this.axios({
+        method: 'post',
+        url: 'login/',
+        data: this.ruleForm
+      })
         .then(function (response) {
           console.log(response.data['return']['token'])
-          that.json_data = response.data
+          that.json_data = response.data['return']['token']
         })
         .catch(function (error) {
           console.log(error)
         })
-      alert(this.ruleForm)
+      // this.axios.post('login/', {username: '15988888888', password: '111111'})
     },
     sign (formName) {
       alert(this.ruleForm)
