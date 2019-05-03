@@ -18,7 +18,11 @@ export default {
   },
   methods: {
     start () {
-      if (this.id !== 0) return
+      if (this.id !== 0) {
+        clearInterval(this.id)
+        this.id = 0
+        return
+      }
       this.id = setInterval(() => {
         var tou = this.txt.substring(0, 1)
         var yu = this.txt.substring(1)

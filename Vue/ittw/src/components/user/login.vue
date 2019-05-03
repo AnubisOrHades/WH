@@ -1,5 +1,6 @@
 <template>
   <div class="login w">
+    <router-link :to='{name:"home"}'>首页</router-link>
     <div class="content">
       <div class="login_img"></div>
       <div class="form">
