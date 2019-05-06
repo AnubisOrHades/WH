@@ -5,6 +5,9 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'mint-ui/lib/style.css'
+import '../static/mui/dist/css/mui.css'
+import '../static/font_icon/iconfont.css'
 import Axios from 'axios'
 
 Vue.config.productionTip = false

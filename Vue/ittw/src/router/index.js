@@ -9,6 +9,7 @@ import user from '@/components/user/user'
 Vue.use(Router)
 
 export default new Router({
+  linkActiveClass: 'mui-active',
   routes: [
     {
       path: '/login',
@@ -19,7 +20,7 @@ export default new Router({
       }
     },
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       component: home,
       meta: {

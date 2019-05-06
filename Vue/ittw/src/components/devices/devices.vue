@@ -1,6 +1,5 @@
 <template>
     <div>设备
-      <router-link :to='{name:"home"}'>首页</router-link>
     </div>
 </template>
 
