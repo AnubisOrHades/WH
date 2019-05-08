@@ -30,11 +30,9 @@
 
 <script>
 import Vue from 'vue'
-import {Header, Tabbar, TabItem} from 'mint-ui'
+import {Header} from 'mint-ui'
 
 Vue.component(Header.name, Header)
-Vue.component(Tabbar.name, Tabbar)
-Vue.component(TabItem.name, TabItem)
 
 export default {
   name: 'App',

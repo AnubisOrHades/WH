@@ -8,8 +8,10 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'mint-ui/lib/style.css'
 import '../static/mui/dist/css/mui.css'
 import '../static/font_icon/iconfont.css'
+import globalVariable from './api/global_variable.js'
 import Axios from 'axios'
 
+Vue.prototype.GLOBAL = globalVariable
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.prototype.axios = Axios
@@ -18,7 +20,7 @@ Vue.prototype.axios = Axios
 Axios.defaults.baseURL = 'http://127.0.0.1:8000/api/'
 // 设置默认请求头
 Axios.defaults.headers = {
-  Authorization: 'JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNCwidXNlcm5hbWUiOiIxNTk4ODg4ODg4OCIsImV4cCI6MTU1NzEyNjAyOCwiZW1haWwiOiIifQ.nzZlPhsaDSPjxto8-EfQCr7pAyua5ynayornfr7bbJc'
+  // Authorization: this.GLOBAL.header
 }
 /* eslint-disable no-new */
 new Vue({

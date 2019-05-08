@@ -1,5 +1,6 @@
 <template>
   <div class="login w">
+    <h2>{{GLOBAL.token}}</h2>
     <router-link :to='{name:"home"}'>首页</router-link>
     <div class="content">
       <div class="login_img"></div>
@@ -28,7 +29,6 @@
     </div>
     <div class="clear"></div>
     <p>{{json_data}}</p>
-    <!--<p v-for="( v , k, i ) in json_data" :key="i"> {{k}}:{{v}}</p>-->
   </div>
 </template>
 <script>
@@ -84,8 +84,9 @@ export default {
         data: this.ruleForm
       })
         .then(function (response) {
-          console.log(response.data['return']['token'])
+          // console.log(response.data['return']['token'])
           that.json_data = response.data['return']['token']
+          that.GLOBAL.token = response.data['return']['token']
         })
         .catch(function (error) {
           console.log(error)
